@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
-import NotFound from "../views/NotFound";
+//import NotFound from "../views/NotFound";
 
 import { storage } from "../utils";
 
