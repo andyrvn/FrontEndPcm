@@ -33,14 +33,18 @@ const routes = [
     }
   },
   {
-    path: "*",
+    /*path: "*",
     name: "not-found",
     component: NotFound
+  */
+    path: "*",
+    name: "catchAll",
+    component: Home
   }
 ];
 
 const router = new VueRouter({
-  mode: "hash",
+  mode: "history",
   base: process.env.BASE_URL,
   routes: [
     ...routes,
