@@ -1,7 +1,7 @@
 import axios from "@/utils/axios";
 
-export const login = ({userName, password }) => {
-  return axios.post(`/login`, { userName, password });
+export const login = function ({userName, password }){
+  return axios.post(`user/login`, { userName, password });
 };
 
 export const register = ({ userName, name, email, password }) => {
