@@ -3,8 +3,8 @@
     <h3>Sign in to get started.</h3>
     <!-- Here goes the form -->
     <el-form :model="form" ref="loginForm" :rules="rules">
-      <el-form-item label="Email" prop="email">
-        <el-input v-model="form.email"></el-input>
+      <el-form-item label="Username" prop="userName">
+        <el-input v-model="form.userName"></el-input>
       </el-form-item>
       <el-form-item label="Password" prop="password">
         <el-input type="password" v-model="form.password"></el-input>
@@ -36,14 +36,14 @@ export default {
   data() {
     return {
       form: {
-        email: "",
+        userName: "",
         password: ""
       },
       rules: {
-        email: [
+        userName: [
           {
             required: true,
-            message: "enter valid email",
+            message: "enter valid username",
             trigger: "blur"
           }
         ],
@@ -61,9 +61,9 @@ export default {
   methods: {
     ...mapActions(["login"]),
     submitLogin() {
-      const { email, password } = this.form;
-      if (email && password)
-        this.login({ email, password })
+      const { userName, password } = this.form;
+      if (userName && password)
+        this.login({ userName, password })
           .then(() => {
             this.$router.push("/");
           })

@@ -9,13 +9,13 @@ const initialState = {
 export default {
   state: initialState,
   mutations: {
-    SET_USER_DATA(state, { email, token, ...rest }) {
+    SET_USER_DATA(state, { userName, token, ...rest }) {
       state.user = {
         email,
         ...rest
       };
       // Store the token in local storage
-      storage.set("auth", { email, token });
+      storage.set("auth", { userName, token });
       // Set token in the header for future requests
       axios.defaults.headers.common = {
         Authorization: token
@@ -32,7 +32,7 @@ export default {
       handler({ commit }, loginDetails) {
         return accountsAPI.login(loginDetails).then(({ headers }) => {
           commit("SET_USER_DATA", {
-            email: loginDetails.email,
+            userName: loginDetails.userName,
             token: headers["x-auth-token"]
           });
         });
@@ -46,8 +46,8 @@ export default {
     },
     register: {
       root: true,
-      handler(ctx, { name, email, password }) {
-        return accountsAPI.register({ name, email, password });
+      handler(ctx, {userName, name, email, password }) {
+        return accountsAPI.register({userName, name, email, password });
       }
     }
   },
@@ -55,8 +55,8 @@ export default {
     userDetails(state) {
       return state.user;
     },
-    isLoggedIn({ token = null, email = null }) {
-      return Boolean(token && email);
+    isLoggedIn({ token = null, userName = null }) {
+      return Boolean(token && userName);
     }
   }
 };

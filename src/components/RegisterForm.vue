@@ -3,6 +3,9 @@
     <h3>Sign up to get started.</h3>
     <!-- Here goes the form -->
     <el-form :model="form" ref="loginForm" :rules="rules">
+      <el-form-item label="Username" prop="userName">
+        <el-input v-model="form.userName"></el-input>
+      </el-form-item>
       <el-form-item label="Name" prop="name">
         <el-input v-model="form.name"></el-input>
       </el-form-item>
@@ -36,10 +39,17 @@ export default {
   data() {
     return {
       form: {
-        email: "",
+        userName: "",
         password: ""
       },
       rules: {
+        userName: [
+          {
+            required: true,
+            message: "enter valid & unique username",
+            trigger: "blur"
+          }
+        ],
         name: [
           {
             required: true,
@@ -68,8 +78,8 @@ export default {
   methods: {
     ...mapActions(["register"]),
     createAccount() {
-      const { name, email, password } = this.form;
-      this.register({ name, email, password })
+      const { userName, name, email, password } = this.form;
+      this.register({ userName, name, email, password })
         .then(() => {
           this.$notify({
             showClose: true,

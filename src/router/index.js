@@ -81,7 +81,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   const authInfo = storage.get("auth");
   if (to.meta.public) return next();
-  if (!authInfo || !authInfo.email || !authInfo.token) return next("/login");
+  if (!authInfo || !authInfo.userName || !authInfo.token) return next("/login");
   return next();
 });
 

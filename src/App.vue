@@ -14,7 +14,7 @@ export default {
       return response;
     });
     const authInfo = storage.get("auth");
-    const isLoggedIn = !!authInfo.email && !!authInfo.token;
+    const isLoggedIn = !!authInfo.userName && !!authInfo.token;
     if (isLoggedIn) {
       const authInfo = storage.get("auth");
       // Set token in the header for future requests
