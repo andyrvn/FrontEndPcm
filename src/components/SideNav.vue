@@ -22,10 +22,10 @@
       <i class="el-icon-setting"></i>
       <span slot="title">Settings</span>
     </el-menu-item>
-    <el-menu-item @click="logout">
+    <!-- <el-menu-item @click="logout">
       <i class="el-icon-switch-button"></i>
       <span slot="title">Logout</span>
-    </el-menu-item>
+    </el-menu-item> -->
   </el-menu>
 </template>
 
@@ -42,7 +42,7 @@ export default {
     handleClose() {},
     logout() {
       this.$store.dispatch("logout");
-      //this.$router.push("/login");
+      this.$router.push("/login");
     }
   }
 };
