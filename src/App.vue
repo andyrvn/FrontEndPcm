@@ -9,7 +9,7 @@ import { storage } from "@/utils";
 import axios from "@/utils/axios";
 export default {
   created() {
-    axios.interceptors.response.use(function(response)  {
+    axios.interceptors.response.use(response => {
       if (response.status === 401) this.$router.push("user/login");
       return response;
     });

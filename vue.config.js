@@ -3,7 +3,7 @@ module.exports = {
     ? './'
     : '/',
   devServer: {
-    proxy: 'http://server.pcm-app.xyz:8080/test-0.0.1',
+    proxy: 'http://server.pcm-app.xyz:8080/test-0.0.1/user/login',
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, PUT, POST, DELETE, OPTIONS",
