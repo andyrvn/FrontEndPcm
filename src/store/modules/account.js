@@ -11,7 +11,7 @@ export default {
   mutations: {
     SET_USER_DATA(state, { userName, token, ...rest }) {
       state.user = {
-        userName,
+        email,
         ...rest
       };
       // Store the token in local storage
