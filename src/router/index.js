@@ -50,7 +50,7 @@ const router = new VueRouter({
   routes: [
     ...routes,
     {
-      path: "/",
+      path: "/home",
       component: Home,
       children: [
         {
