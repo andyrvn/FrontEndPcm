@@ -65,7 +65,7 @@ export default {
       if (userName && password)
         this.login({ userName, password })
           .then(() => {
-            this.$router.push("/");
+            this.$router.push("/").catch(() => {});
           })
           .catch(err => {
             if (!this.errors.length) this.errors.push(err);
