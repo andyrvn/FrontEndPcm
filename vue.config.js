@@ -1,7 +1,7 @@
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
     ? './'
-    : '/',
+    : '/frontend',
   devServer: {
     proxy: 'http://server.pcm-app.xyz:8080/test-0.0.1',
     headers: {
