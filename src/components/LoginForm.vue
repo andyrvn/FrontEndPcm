@@ -64,8 +64,7 @@ export default {
       const { userName, password } = this.form;
 
       if (userName && password)
-        this.login({ userName, password })
-          .then(() => {
+        this.login({ userName, password }).then(() => {
             this.$router.push("/");
           })
           .catch(err => {

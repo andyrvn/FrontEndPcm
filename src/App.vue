@@ -10,7 +10,7 @@ import axios from "@/utils/axios";
 export default {
   created() {
     axios.interceptors.response.use(response => {
-      if (response.status === 401) this.$router.push("user/login");
+      if (response.status === 401) this.$router.push("/login");
       return response;
     });
     const authInfo = storage.get("auth");
