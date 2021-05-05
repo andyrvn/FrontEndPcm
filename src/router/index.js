@@ -4,7 +4,7 @@ import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import NotFound from "../views/NotFound";
 
-import { storage } from "../utils";
+//import { storage } from "../utils";
 
 import Home from "../views/Home.vue";
 import Dashboard from "../views/Dashboard.vue";
@@ -79,11 +79,11 @@ const router = new VueRouter({
   ]
 });
 
-router.beforeEach((to, from, next) => {
+/*router.beforeEach((to, from, next) => {
   const authInfo = storage.get("auth");
   if (to.meta.public) return next();
   if (!authInfo || !authInfo.userName || !authInfo.token) return next("/login");
   return next();
-});
+});*/
 
 export default router;
