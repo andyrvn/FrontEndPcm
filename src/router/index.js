@@ -84,7 +84,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.public)
     return next();
   if (!authInfo || !authInfo.userName || !authInfo.token)
-    return next("/dashboard");
+    return next("/login");
     return next();
 });
 
